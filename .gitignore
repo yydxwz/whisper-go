@@ -1,0 +1,4 @@
+lib/*
+whisper.cpp/build
+ggml/build
+models/
