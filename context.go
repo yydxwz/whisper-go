@@ -286,7 +286,7 @@ func (context *context) IsLANG(t Token, lang string) bool {
 ///////////////////////////////////////////////////////////////////////////////
 // PRIVATE METHODS
 
-func toSegment(ctx *Context, n int) Segment {
+func toSegment(ctx *Context_C, n int) Segment {
 	return Segment{
 		Num:    n,
 		Text:   strings.TrimSpace(ctx.Whisper_full_get_segment_text(n)),
@@ -296,7 +296,7 @@ func toSegment(ctx *Context, n int) Segment {
 	}
 }
 
-func toTokens(ctx *Context, n int) []Token {
+func toTokens(ctx *Context_C, n int) []Token {
 	result := make([]Token, ctx.Whisper_full_n_tokens(n))
 	for i := 0; i < len(result); i++ {
 		data := ctx.Whisper_full_get_token_data(n, i)
